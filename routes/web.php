@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ResolveController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\ArticleGeneratorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [ResolveController::class, 'index'])->name('index');
+Route::get('/resolve', [ResolveController::class, 'resolve'])->name('resolve');
+Route::get('/quiz', [QuizController::class, 'showQuizForm']);
+Route::post('/generate-quiz', [QuizController::class, 'generateQuiz']);
+Route::get('/write', function () {
+    $title = '';
+    $content = '';
+    return view('write', compact('title', 'content'));
+}); // ここに閉じ括弧を追加
+
+Route::post('/generate', [ArticleGeneratorController::class, 'index']);
+Route::post('/show-answer', [QuizController::class, 'showanswer']);
