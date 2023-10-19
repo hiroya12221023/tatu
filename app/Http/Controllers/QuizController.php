@@ -23,7 +23,7 @@ public function generateQuiz(Request $request)
         // 問題文を生成するAPIリクエスト用のメッセージデータを構築
         $questionMessages = [
             ["role" => "system", "content" => "You are a helpful assistant."],
-         ["role" => "user", "content" => "Create a quiz question related to {{ $userInput }}.in japanese"]
+         ["role" => "user", "content" => "{{ $userInput }}に関連するクイズ問題文を一つ作成してください。さらに回答を四つでそのうちの正解は一つだけ作成してください。出力する際に最初は問題文、半角スペースを付けて次に解答１また半角スペースをつけて解答２また半角スペースをつけて解答３また半角スペースをつけて解答４にしてください。ただし、解答番号と回答の間に空白は入れないでください"]
         ];
 
         // 問題文を生成するAPIリクエスト
@@ -50,6 +50,7 @@ public function generateQuiz(Request $request)
             'question' => $quizQuestion,
             'openai_response' => $questionApiResponse,
         ]);
+        
 
         DB::commit();
     } catch (\Exception $e) {
@@ -57,8 +58,9 @@ public function generateQuiz(Request $request)
         DB::rollback();
         throw $e;
     }
+    $displayArray = explode(' ',$quizQuestion);
 
-        return view('quiz.question', compact('quizQuestion', 'quiz'));
+        return view('quiz.question', compact('quizQuestion', 'quiz','displayArray' ));
     }
 
     // 他のメソッドやロジックもここに追加できます

@@ -16,11 +16,16 @@ use App\Http\Controllers\ArticleGeneratorController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', [ResolveController::class, 'index'])->name('index');
+Route::get('/', function () {
+    return view('quiz.hiro');
+});
+
+
+Route::get('/index', [ResolveController::class, 'index'])->name('index');
 Route::get('/resolve', [ResolveController::class, 'resolve'])->name('resolve');
 Route::get('/quiz', [QuizController::class, 'showQuizForm']);
 Route::post('/generate-quiz', [QuizController::class, 'generateQuiz']);
