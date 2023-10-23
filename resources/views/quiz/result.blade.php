@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>クイズアプリ</title>
+    <title>kuis</title>
     <link rel="stylesheet" href="/hiro/blog/public/css/hiro.css">
      <style>
         body {
@@ -181,7 +181,7 @@ header img {
    <a href="/#feature-section" class="tatu">機能</a>
     <div class="separator"></div>
    <a href="/#introdction" class="tatu">アプリの遊び方</a>
-    <a href="quiz" class="quizzzz">クイズ</a>
+    <a href="quiz" class="quizzzz">kuis</a>
      <a href="/" class="overview">top-page</a>
        <div class="hamburger-icon" id="hamburger-icon">
         <div class="hamburger-line"></div>
@@ -193,7 +193,7 @@ header img {
         <a href="/#overview" class="menu-item">概要</a>
         <a href="/#feature-section" class="menu-item">機能</a>
         <a href="/#introdction" class="menu-item">アプリの遊び方</a>
-        <a href="quiz" class="menu-item">クイズ</a>
+        <a href="quiz" class="menu-item">kuis</a>
         <a href="/" class="menu-item">top-page</a>
     </div>
     <div class="yes">
