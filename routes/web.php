@@ -37,3 +37,5 @@ Route::get('/write', function () {
 
 Route::post('/generate', [ArticleGeneratorController::class, 'index']);
 Route::post('/show-answer', [QuizController::class, 'showanswer']);
+Route::post('/show-answeraaaaaa', [QuizController::class, 'showanswer']);
+
